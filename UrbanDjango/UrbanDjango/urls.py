@@ -17,9 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from task2.views import view_class, ViewFunc
+from task3.views import Shop, Cart, MainPage
+
+
+contex = {
+    'game1': 'WarThunder',
+    'game2': 'Squad',
+    'game3': 'CALL of DUTY'
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('class/', view_class),
-    path('func/', ViewFunc.as_view())
+    path('func/', ViewFunc.as_view()),
+    path('platform/', MainPage.as_view()),
+    path('platform/games/', Shop.as_view(), contex),
+    path('platform/cart/', Cart.as_view())
 ]
