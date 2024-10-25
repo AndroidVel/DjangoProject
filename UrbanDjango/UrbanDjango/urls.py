@@ -17,13 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from task2.views import view_class, ViewFunc
-from task3.views import Shop, Cart, MainPage
+from task4.views import Shop, Cart, MainPage
 
 
 contex = {
-    'game1': 'WarThunder',
-    'game2': 'Squad',
-    'game3': 'CALL of DUTY'
+    'games': ['WarThunder', 'Squad', 'CALL of DUTY']
 }
 
 urlpatterns = [
