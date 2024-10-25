@@ -18,17 +18,16 @@ from django.contrib import admin
 from django.urls import path
 from task2.views import view_class, ViewFunc
 from task4.views import Shop, Cart, MainPage
+from task5.views import sign_up_by_django, sign_up_by_html
 
-
-contex = {
-    'games': ['WarThunder', 'Squad', 'CALL of DUTY']
-}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('class/', view_class),
     path('func/', ViewFunc.as_view()),
     path('platform/', MainPage.as_view()),
-    path('platform/games/', Shop.as_view(), contex),
-    path('platform/cart/', Cart.as_view())
+    path('platform/games/', Shop.as_view(), Shop.context),
+    path('platform/cart/', Cart.as_view()),
+    path('platform/html_sign_up/', sign_up_by_html),
+    path('platform/django_sign_up/', sign_up_by_django)
 ]
