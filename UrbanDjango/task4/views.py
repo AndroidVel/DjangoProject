@@ -8,6 +8,9 @@ class MainPage(TemplateView):
 
 class Shop(TemplateView):
     template_name = 'fourth_task/shop.html'
+    context = {
+        'games': ['WarThunder', 'Squad', 'CALL of DUTY']
+    }
 
 
 class Cart(TemplateView):
